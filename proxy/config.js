@@ -1,9 +1,10 @@
 module.exports = {
     proxyRouter: {
-        'login.localhost:3000': 'http://localhost:3001',
-        'rps.localhost:3000': 'http://localhost:3002',
-        'app1.localhost:3000': 'http://localhost:3003',
-        'app2.localhost:3000': 'http://localhost:3004',
+        'login.localhost': 'http://localhost:3001',
+        '/login': 'http://localhost:3001',
+        'rps.localhost': 'http://localhost:3002',
+        'app1.localhost': 'http://localhost:3003',
+        'app2.localhost': 'http://localhost:3004',
     },
-    defaultRouterPath: 'localhost:3000/404'
+    defaultRouterPath: 'http://login.localhost'
 }

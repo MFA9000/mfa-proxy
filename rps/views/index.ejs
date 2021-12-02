@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissor</title>
+    <link rel="icon" href="images/favcon.JPG" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="/style/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="hecon">
+        <h2>Rock Paper Scissor</h2>
+        <form class="" action="/login" method="post">
+          <% if(isLogined){%>
+          <button type="submit" name="button">LogOut</button>
+          <%}else{%>
+          <button type="submit" name="button">Login</button>
+          <%}%>
+        </form>
+        <h3>Choose any one to play</h3>
+        <p class="scoreP">
+          <% if(isLogined){%>
+          <span><%= username%>'s</span>
+          <%}%> Score: <span id="changeScore">0</span>
+        </p>
+      </div>
+
+      <div id="rpsmain">
+        <img
+          class="rockimg"
+          id="rock"
+          src="https://i.ibb.co/QjGqSDx/rock.png"
+          alt="rock"
+        />
+        <img
+          class="paperimg"
+          id="paper"
+          src="https://i.ibb.co/PD0fVfh/paper.png"
+          alt="paper"
+        />
+        <img
+          class="scissorimg"
+          id="scissor"
+          src="https://i.ibb.co/r2JVvDt/scissor.png"
+          alt="scissor"
+        />
+      </div>
+
+      <div id="result"></div>
+    </main>
+
+    <div id="footer">
+      <div class="row text-center">
+        <div class="small-12 medium-6 medium-offset-3 columns">
+          <p id="logo">MV</p>
+          <p id="copyright">
+            Made by |
+            <a class="name" href="https://www.instagram.com/mrityunjay.404/"
+              >Mrityunjay</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="info"></div>
+    <script src="script/index.js"></script>
+  </body>
+</html>

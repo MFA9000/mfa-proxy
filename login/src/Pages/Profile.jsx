@@ -7,7 +7,7 @@ import Header from "../Components/Header";
 import { useCookies } from "react-cookie";
 
 const cookieOptions = {
-  domain: "localhost:3000",
+  domain: "localhost",
   path: "/",
   secure: false,
 };

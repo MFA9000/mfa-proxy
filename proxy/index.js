@@ -10,7 +10,7 @@ const { reverseProxyRouter } = require('./proxy')
 const app = express();
 
 // Configuration
-const PORT = 3000;
+const PORT = 80;
 const HOST = "0.0.0.0";
 
 // Cookie Parser
@@ -27,7 +27,7 @@ app.get('/info', (req, res, next) => {
 // app.use('/login', express.static(path.join(__dirname, 'authpage')))
 app.use('/404', express.static(path.join(__dirname, '404')))
 
-app.use(authMiddleware);
+// app.use(authMiddleware);
 
 // REVERSE PROXY
 app.use('/', reverseProxyRouter);

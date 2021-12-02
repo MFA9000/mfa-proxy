@@ -2,4 +2,6 @@ proxy/node_modules/
 app1/node_modules/
 app2/node_modules/
 login/node_modules/
+rps/node_modules/
+
 .DS_Store

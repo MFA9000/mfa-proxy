@@ -1,0 +1,198 @@
+body {
+  background: linear-gradient(to right, #f12711, #f5af19);
+  height: 20vh;
+}
+
+.hecon {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Balsamiq Sans', cursive;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.7rem;
+  margin-top: 0;
+}
+
+.scoreP {
+  margin: 5vh 0 0;
+  font-size: 2rem;
+}
+
+#rpsmain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0;
+  height: 25vh;
+}
+
+#rock,
+#paper,
+#scissor {
+  width: 12%;
+  margin: 20px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+#rock:hover,
+#paper:hover,
+#scissor:hover {
+  box-shadow: -1px -1px 36px 5px rgba(0, 0, 0, 1);
+}
+
+.contaner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#result {
+  margin: 20px;
+  padding: 20px;
+}
+
+.newImg, .newDiv {
+  width: 90px;
+  margin: 20px;
+}
+
+.txt {
+  font-size: 1.2rem;
+  font-family: 'Balsamiq Sans', cursive;
+}
+
+.newDiv {
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Balsamiq Sans', cursive;
+  margin-top: 0;
+}
+
+.newP {
+  font-size: 15px;
+}
+
+.anima {
+  position: relative;
+  animation: a 1s;
+}
+
+@keyframes a {
+  from {
+    top: 3vh;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/*** footer starts ***/
+#footer {
+  padding: 2em 4em;
+  text-align: center;
+  background-color: rgb(215, 215, 215);
+  width: 50%;
+  margin: 9vh auto 2vh;
+  border-radius: 30px;
+}
+
+#footer #logo {
+  background-color: rgba(255, 103, 68, 0.91);
+  border-radius: 50%;
+  color: #fff;
+  padding: .4em;
+  font-family: "Maven pro", sans-serif;
+  font-size: 1.6em;
+  font-weight: 500;
+  display: inline;
+}
+
+.columns {
+  width: 100%;
+}
+
+#footer #copyright {
+  margin-top: 1.5rem;
+  font-family: "Maven pro", sans-serif;
+  font-weight: 500;
+  color: #7d7d7d;
+}
+
+.name {
+  font-family: 'Chelsea Market', cursive;
+  color: rgb(255, 89, 57);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.name:hover {
+  color: rgb(251, 122, 98);
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-size: cover;
+  margin-top: -100px;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 490px) {
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  #rock,
+  #paper,
+  #scissor {
+    width: 16%;
+  }
+
+  .contaner {
+    width: 100%;
+  }
+
+  .newImg {
+    width: 20%;
+  }
+
+  .scoreP {
+    font-size: 1.2rem;
+  }
+
+  .yourDiv, .compuDiv {
+    width: 100%;
+    text-align: center;
+  }
+
+  .newDiv {
+    font-size: 2.5rem;
+    width: 100%;
+  }
+
+  .txt {
+    font-size: 10px;
+  }
+}
