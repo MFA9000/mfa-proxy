@@ -1,48 +1,50 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
-
-import { useOktaAuth } from "@okta/okta-react";
+import { Container, Button } from "react-bootstrap";
 
 import Header from "../Components/Header";
 import { useCookies } from "react-cookie";
 
 const Profile = () => {
-  const { authState, oktaAuth, authService } = useOktaAuth();
-  const [userInfo, setUserInfo] = useState(null);
-  const [cookies, setCookie, removeCookie] = useCookies(["auth", "CB_URL"]);
+  const [cookies, setCookie, removeCookie] = useCookies([
+    "auth_user_info",
+    "auth_token",
+  ]);
+
+  const [isLoggedin, setLogin] = useState(false);
+  const [userInfo, setUserInfo] = useState({});
+  const [token, setToken] = useState({});
 
   useEffect(() => {
-    async function authenticate() {
-      if (!authState) return;
-
-      if (!authState.isAuthenticated) {
-        setUserInfo(null);
-        return await oktaAuth.signInWithRedirect();
-      }
-
-      oktaAuth.getUser().then((info) => {
-        console.log(info);
-        setCookie("auth", info);
-        window.location.replace(cookies["CB_URL"]);
-        setUserInfo(info);
-      });
-    }
-    authenticate();
+    if (!cookies["auth_user_info"] || !cookies["auth_token"]) return;
+    setUserInfo(cookies["auth_user_info"]);
+    setToken(cookies["auth_token"]);
+    setLogin(true);
   }, []);
 
-  if (!authState?.isAuthenticated) {
+  if (!isLoggedin) {
     return (
       <Container>
         <p>Please wait while we sign you in</p>
+        or click here to go home
+        <br />
+        <Button
+          variant="secondary"
+          onClick={() => {
+            window.location.replace(`/`);
+          }}
+        >
+          home
+        </Button>
       </Container>
     );
   } else {
     return (
       <Container>
-        <Header authState={authState} oktaAuth={oktaAuth}></Header>
-        <h4>Your profile page</h4>
-
+        <Header isLoggedin={isLoggedin}></Header>
+        <h4>Private Dashvoard</h4>
         <p>Welcome to your profile page </p>
+
+        <p> {JSON.stringify({ userInfo, token }, null, 2)} </p>
       </Container>
     );
   }

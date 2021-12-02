@@ -34,8 +34,8 @@ const Profile = () => {
       const token = await oktaAuth.token.getWithoutPrompt();
 
       console.log({ info, token });
-      setCookie("auth_user_info", JSON.stringify(info));
-      setCookie("auth_token", JSON.stringify(token));
+      setCookie("auth_user_info", JSON.stringify(info), cookieOptions);
+      setCookie("auth_token", JSON.stringify(token), cookieOptions);
 
       // setCookie("auth", JSON.stringify({ token, info }));
       if (CB_URL && CB_URL !== "false") window.location.replace(CB_URL);
