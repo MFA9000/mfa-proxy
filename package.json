@@ -1,0 +1,16 @@
+{
+  "name": "mfa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "proxy": "cd proxy && npm start",
+    "login": "cd login && npm start",
+    "app1": "cd app1 && npm start",
+    "app2": "cd app2 && npm start",
+    "rps": "cd rps && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
