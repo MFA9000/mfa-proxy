@@ -12,23 +12,21 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  console.log(req.cookies, req.signedCookies)
   var auth_user_info;
   var auth_user_token;
 
-  if (req.cookies && req.cookies.auth_user_info) auth_user_info = req.cookies.auth_user_info
-  if (req.cookies && req.cookies.auth_token) auth_user_token = req.cookies.auth_token
+  if (req.cookies && req.cookies.auth_user_info) auth_user_info = JSON.parse(req.cookies.auth_user_info)
+  if (req.cookies && req.cookies.auth_token) auth_user_token = JSON.parse(req.cookies.auth_token)
 
-  if (req.cookies && req.signedCookies.auth_user_info) auth_user_info = req.signedCookies.auth_user_info
-  if (req.cookies && req.signedCookies.auth_token) auth_user_token = req.signedCookies.auth_token
+  if (req.cookies && req.signedCookies.auth_user_info) auth_user_info = JSON.parse(req.signedCookies.auth_user_info)
+  if (req.cookies && req.signedCookies.auth_token) auth_user_token = JSON.parse(req.signedCookies.auth_token)
 
   let username, isLogined = false;
 
-  if (!auth_user_info || !auth_user_token) isLogined = false
+  if (!auth_user_info || !auth_user_token) return res.render("index", { username: username, isLogined: false, auth_user_token, auth_user_info });
 
-  console.log(auth_user_info, auth_user_token)
+  // console.log(auth_user_info, auth_user_token)
   username = auth_user_info.name, isLogined = true
-
   res.render("index", { username: username, isLogined: isLogined, auth_user_info: auth_user_info, auth_user_token: auth_user_token });
 });
 

@@ -25,17 +25,17 @@
     <main>
       <div class="hecon">
         <h2>Rock Paper Scissor</h2>
-        <form class="" action="/login" method="post">
+        <div class="" >
           <% if(isLogined){%>
-          <button type="submit" name="button">LogOut</button>
+          <button type="submit" name="button" onclick="logout()">LogOut</button>
           <%}else{%>
-          <button type="submit" name="button">Login</button>
+          <button type="submit" name="button" onclick="login()">Login</button>
           <%}%>
-        </form>
+          </div>
         <h3>Choose any one to play</h3>
         <p class="scoreP">
           <% if(isLogined){%>
-          <span><%= username%>'s</span>
+          <span><%=username%>'s</span>
           <%}%> Score: <span id="changeScore">0</span>
         </p>
       </div>
@@ -77,7 +77,7 @@
         </div>
       </div>
     </div>
-    <div id="info"><% auth_user_info, auth_user_toke %></div>
+    <div id="info"><%=auth_user_info%>, <%=auth_user_token %></div>
     <script src="script/index.js"></script>
   </body>
 </html>

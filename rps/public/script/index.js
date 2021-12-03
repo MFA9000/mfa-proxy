@@ -138,4 +138,12 @@ function iD(e) {
   }
 }
 
-document.getElementById('info').innerHTML = JSON.stringify({ auth_user_info, auth_user_token }, null, 2)
+// document.getElementById('info').innerHTML = JSON.stringify({ auth_user_info, auth_user_token }, null, 2)
+
+const logout = () => {
+  window.location.replace('http://localhost:3001/logout?CB_URL=http://localhost:3002')
+}
+
+const login = () => {
+  window.location.replace('http://localhost:3001?CB_URL=http://localhost:3002')
+}
