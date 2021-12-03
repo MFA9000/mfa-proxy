@@ -25,7 +25,8 @@ const Profile = () => {
     async function authenticate() {
       if (!authState) return;
       if (!authState.isAuthenticated) {
-        removeCookie("auth");
+        removeCookie("auth_user_info");
+        removeCookie("auth_token");
         removeCookie("CB_URL");
         setUserInfo(null);
         return await oktaAuth.signInWithRedirect();

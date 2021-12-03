@@ -21,19 +21,11 @@ function getQueryVariable(variable) {
   }
   return (false);
 }
-const CookieComponent = (props) => {
-  const url = getQueryVariable("CB_URL")
-  const [c, setcookie] = useCookies(['CB_URL']);
-  setcookie("CB_URL", url, { path: '/' })
-  return <> </>
-}
-
 class App extends React.Component {
   render() {
     return (
       <CookiesProvider>
-        <Router>
-          <CookieComponent />          
+        <Router>      
             <Route path="/" component={Home} />
             <Route path="/Profile" component={Profile} />
         </Router>

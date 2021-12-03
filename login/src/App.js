@@ -9,6 +9,7 @@ import { CookiesProvider, useCookies } from 'react-cookie';
 
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
+import Logout from "./Pages/Logout";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -33,7 +34,7 @@ const CookieComponent = (props) => {
   const [c, setcookie, removeC] = useCookies(['CB_URL']);
 
   if (!url || url === 'false') {
-    removeC('CB_URL')
+    // removeC('CB_URL')
     return <> </>
   }
 
@@ -71,6 +72,7 @@ class App extends React.Component {
             <Route path="/" component={Home} />
             <Route path="/callback" component={LoginCallback} />
             <Route path="/Profile" component={Profile} />
+            <Route path="/logout" component={Logout} />
             {/* <Route component={(props) => <Redirect to={'/404'} />} /> */}
           </Security>
         </Router>
