@@ -31,18 +31,7 @@ const Home = () => {
 
       <Row>
         <Col sm={12} className="text-center">
-          <h3>React routing Demo</h3>
-
-          <h5>
-            A <a href="https://reactjs.org/">React</a> Demo using{" "}
-            <a href="https://github.com/molefrog/wouter">Wouter</a> Secured by{" "}
-            <a href="https://www.okta.com/">Okta</a>
-          </h5>
-
-          <p>
-            A tutorial written by{" "}
-            <a href="https://profile.fishbowlllc.com">Nik Fisher</a>
-          </p>
+          <h5>Login application made on react</h5>
         </Col>
       </Row>
 

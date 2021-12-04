@@ -39,6 +39,7 @@ const Profile = () => {
       setCookie("auth_token", JSON.stringify(token), cookieOptions);
 
       // setCookie("auth", JSON.stringify({ token, info }));
+      removeCookie("CB_URL");
       if (CB_URL && CB_URL !== "false") window.location.replace(CB_URL);
       setUserInfo(info);
     }

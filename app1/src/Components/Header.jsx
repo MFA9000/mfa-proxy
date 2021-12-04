@@ -7,7 +7,9 @@ const Header = ({ isLoggedin }) => {
     <Button
       variant="secondary"
       onClick={() => {
-        window.location.replace("http://localhost:3001/logout?CB_URL=http://localhost:3003/");
+        window.location.replace(
+          "http://localhost:3001/logout?CB_URL=http://localhost:3003/"
+        );
       }}
     >
       Logout

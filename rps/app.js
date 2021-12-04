@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 
   // console.log(auth_user_info, auth_user_token)
   username = auth_user_info.name, isLogined = true
-  res.render("index", { username: username, isLogined: isLogined, auth_user_info: auth_user_info, auth_user_token: auth_user_token });
+  res.render("index", { username: username, isLogined: isLogined, auth_user_info: JSON.stringify(auth_user_info, null, 2), auth_user_token: JSON.stringify(auth_user_token, null, 2) });
 });
 
 app.listen(PORT, () => {
